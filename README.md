@@ -47,3 +47,13 @@ This is the wiring used to define the `cols`, `rows`, and `keymap`. Additionally
 The Python script `gpio_keyboard.py` is my initial version of this driver. It has basically the same funcitonality except:
 * Python `evdev` does not seem to support `EV_REP` on the uinput objects, so the emulated keyboard will not generate auto-repeat
 * At 60Hz scanning frequency it takes about 6% CPU compared to <1% for the C version.
+
+## Autorun @ startup
+``` 
+sudo nano /etc/rc.local
+```
+put this line before `exit 0`
+``` 
+sudo /home/pi/rpi-gpio-matrix-keyboard/gpio_keyboard &
+```
+
