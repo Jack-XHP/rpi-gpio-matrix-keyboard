@@ -5,20 +5,20 @@
 #include <time.h>
 #include "rpi_gpio.h"
 
-#define UINPUT_DEV_NAME "Commodore Pi/4 Keyboard"
-const int cols[] = { 8, 9, 10, 4, 15, 18, 27, 11 };
-const int ncols = 8;
-const int rows[] = { 14, 17, 23, 22, 24, 2, 25, 7 };
+#define UINPUT_DEV_NAME "737 FMC"
+const int cols[] = { 14, 15, 18, 23, 24, 25, 8, 7, 16 };
+const int ncols = 9;
+const int rows[] = { 21, 2, 3, 4, 17, 27, 22, 10 };
 const int nrows = 8;
 const int keymap[] = {
-    KEY_1,         KEY_DELETE,    KEY_LEFTCTRL,   KEY_LEFTALT,   KEY_SPACE, KEY_LEFTMETA,  KEY_Q,     KEY_2,
-    KEY_3,         KEY_W,         KEY_A,          KEY_LEFTSHIFT, KEY_Z,     KEY_S,         KEY_E,     KEY_4,
-    KEY_5,         KEY_R,         KEY_D,          KEY_X,         KEY_C,     KEY_F,         KEY_T,     KEY_6,
-    KEY_7,         KEY_Y,         KEY_G,          KEY_V,         KEY_B,     KEY_H,         KEY_U,     KEY_8,
-    KEY_9,         KEY_I,         KEY_J,          KEY_N,         KEY_M,     KEY_K,         KEY_O,     KEY_0,
-    KEY_DOWN,      KEY_P,         KEY_L,          KEY_COMMA,     KEY_DOT,   KEY_SEMICOLON, KEY_MINUS, KEY_UP,
-    KEY_LEFT,      KEY_BACKSLASH, KEY_APOSTROPHE, KEY_SLASH,     KEY_ESC,   KEY_EQUAL,     KEY_GRAVE, KEY_RIGHT,
-    KEY_BACKSPACE, KEY_ENTER,     KEY_RIGHTBRACE, KEY_LEFTBRACE, KEY_F1,    KEY_F2,        KEY_F3,    KEY_F4,
+    KEY_F1,  KEY_F9,        KEY_RIGHTBRACE,  KEY_LEFTCTRL, KEY_F,     KEY_N,  KEY_V,     KEY_ESC,   KEY_5,
+    KEY_F2,  KEY_F10,       KEY_SEMICOLON,   KEY_PAGEUP,   KEY_G,     KEY_O,  KEY_W,     KEY_DOT,   KEY_6,
+    KEY_F3,  KEY_F11,       KEY_APOSTROPHE,  KEY_PAGEDOWN, KEY_H,     KEY_P,  KEY_X,     KEY_0,     KEY_1,
+    KEY_F4,  KEY_F12,       KEY_BACKSLASH,   KEY_A,        KEY_I,     KEY_Q,  KEY_Y,     KEY_MINUS, KEY_2,
+    KEY_F5,  KEY_INSERT,    KEY_GRAVE,       KEY_B,        KEY_J,     KEY_R,  KEY_Z,     KEY_7,     KEY_3,
+    KEY_F6,  KEY_HOME,      KEY_EQUAL,       KEY_C,        KEY_K,     KEY_S,  KEY_MINUS, KEY_8,     KEY_LEFTALT,
+    KEY_F7,  KEY_END,       KEY_ENTER,       KEY_D,        KEY_L,     KEY_T,  KEY_DELETE,KEY_9,     KEY_LEFTALT,
+    KEY_F8,  KEY_LEFTBRACE, KEY_KPASTERISK,  KEY_E,        KEY_M,     KEY_U,  KEY_SLASH, KEY_4,     KEY_LEFTALT,
 };
 
 int uinput_init() {
