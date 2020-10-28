@@ -57,3 +57,14 @@ put this line before `exit 0`
 sudo /home/pi/rpi-gpio-matrix-keyboard/gpio_keyboard &
 ```
 
+## autorun a website in fullscreen ( ie for webfmc)
+
+```
+sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
+```
+
+at last line put 
+```
+@chromium-browser  --start-fullscreen --kiosk http://google.com/
+```
+
